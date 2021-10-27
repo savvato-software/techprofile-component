@@ -5,7 +5,17 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "dtim-techprofile": [
+        "dist/dtim-techprofile/dtim-techprofile",
+        "dist/dtim-techprofile"
+      ],
+      "jsonpath": [
+        "./node_modules/jsonpath"
+      ]
+    },
     "strict": true,
+    "strictNullChecks": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
