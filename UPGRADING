@@ -1,0 +1,22 @@
+UPGRADING
+===
+
+You are basically going to create a new library in the new version, and copy the source from this old version to that new one. Make sure it runs, and then copy all of the files to the original repo.
+
+$ ng new techprofile-component-YYYYMMDD --no-create-application
+$ cd techprofile-component-YYYYMMDD
+$ ng generate library dtim-techprofile-component
+$ npm install @savvato-software/savvato-javascript-services jsonpath
+
+# Copy the name and version from the original techprofile-component
+$ version=$(jq -r '.version' ../techprofile-component/projects/dtim-techprofile-component/package.json)
+$ name=$(jq -r '.name' ../techprofile-component/projects/dtim-techprofile-component/package.json)
+$ jq --arg version "$version" --arg name "$name" '.version = $version | .name = $name' projects/dtim-techprofile-component/package.json > tmp && mv tmp projects/dtim-techprofile-component/package.json
+
+# Copy the source
+$ cp ../techprofile-component/projects/dtim-techprofile/src/ projects/dtim-techprofile-component/ -r
+
+# Build it, hopefully all goes well
+$ cd projects/dtim-techprofile-component/ && npm version patch && cd - && rm dist/ -rf && ng build dtim-techprofile-component && cd dist/dtim-techprofile-component && npm pack && cd - && date
+
+
