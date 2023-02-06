@@ -6,16 +6,13 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "dtim-techprofile": [
-        "dist/dtim-techprofile/dtim-techprofile",
-        "dist/dtim-techprofile"
-      ],
-      "jsonpath": [
-        "./node_modules/jsonpath"
+      "dtim-techprofile-component": [
+        "dist/dtim-techprofile-component"
       ]
     },
     "strict": true,
-    "strictNullChecks": false,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -24,10 +21,11 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2017",
-    "module": "es2020",
+    "target": "ES2022",
+    "module": "ES2022",
+    "useDefineForClassFields": false,
     "lib": [
-      "es2018",
+      "ES2022",
       "dom"
     ]
   },

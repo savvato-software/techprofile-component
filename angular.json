@@ -3,23 +3,23 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dtim-techprofile": {
+    "dtim-techprofile-component": {
       "projectType": "library",
-      "root": "projects/dtim-techprofile",
-      "sourceRoot": "projects/dtim-techprofile/src",
+      "root": "projects/dtim-techprofile-component",
+      "sourceRoot": "projects/dtim-techprofile-component/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/dtim-techprofile/ng-package.json"
+            "project": "projects/dtim-techprofile-component/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/dtim-techprofile/tsconfig.lib.prod.json"
+              "tsConfig": "projects/dtim-techprofile-component/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/dtim-techprofile/tsconfig.lib.json"
+              "tsConfig": "projects/dtim-techprofile-component/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,13 +27,14 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/dtim-techprofile/src/test.ts",
-            "tsConfig": "projects/dtim-techprofile/tsconfig.spec.json",
-            "karmaConfig": "projects/dtim-techprofile/karma.conf.js"
+            "tsConfig": "projects/dtim-techprofile-component/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }
     }
-  },
-  "defaultProject": "dtim-techprofile"
+  }
 }
