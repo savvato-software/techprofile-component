@@ -1,5 +1,12 @@
 # TechprofileComponent
 
+
+DEPRECATED: Use https://github.com/savvato-software/savvato-skills-matrix-component instead. 
+
+ADMIN: Delete this repo after January 2024.
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
 
 ## Development server
